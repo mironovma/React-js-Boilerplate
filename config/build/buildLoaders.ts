@@ -29,6 +29,14 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
                     },
                 },
             },
+            {
+                loader: "postcss-loader",
+                options: {
+                    postcssOptions: {
+                        plugins: [["postcss-preset-env"]],
+                    },
+                },
+            },
             "sass-loader",
         ],
     };

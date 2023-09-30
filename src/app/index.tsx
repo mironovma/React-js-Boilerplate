@@ -1,9 +1,7 @@
+import { MainPageAsync as MainPage } from "pages/MainPage/MainPage.async";
+
 function App() {
-    return (
-        <div>
-            <p className="font-bold"> Hello world!</p>
-        </div>
-    );
+    return <MainPage />;
 }
 
 export default App;
