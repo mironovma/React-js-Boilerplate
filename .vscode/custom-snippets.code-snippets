@@ -1,0 +1,63 @@
+{
+    "Create custom react function component with memo": {
+        "scope": "typescript, typescriptreact",
+        "prefix": "rc",
+        "body": [
+            "import { memo } from 'react';",
+            "import { useTranslation } from 'react-i18next';",
+            "import { classNames } from '@/shared/lib/classNames/classNames';",
+            "import styles from './${TM_FILENAME_BASE}.module.scss';",
+            "",
+            "interface ${TM_FILENAME_BASE}Props {",
+            "    className?: string;",
+            "}",
+            "",
+            "export const ${TM_FILENAME_BASE} = memo(({className}: ${TM_FILENAME_BASE}Props) => {",
+            "    const { t } = useTranslation();",
+            "",
+            "    return (",
+            "        <div className={classNames(styles.${TM_FILENAME_BASE}, {}, [className])}>",
+            "            ",
+            "        </div>",
+            "    );",
+            "});"
+        ],
+        "description": "Create custom React component by @mironovma tempate."
+    },
+    "Create storybook template": {
+        "scope": "typescript, typescriptreact",
+        "prefix": "st",
+        "body": [
+            "import type { Meta, StoryObj } from \"@storybook/react\";",
+            "import { ${TM_FILENAME_BASE/(.*)\\..+$/$1/} } from \"./${TM_FILENAME_BASE/(.*)\\..+$/$1/}\";",
+            "import { ThemeDecorator } from \"@/shared/config/storybook/ThemeDecorator\";",
+            "import { Theme } from \"@/app/providers/ThemeProvider\";",
+            "",
+            "const meta = {",
+            "    title: \"shared/${TM_FILENAME_BASE/(.*)\\..+$/$1/}\",",
+            "    component: ${TM_FILENAME_BASE/(.*)\\..+$/$1/},",
+            "    args: {",
+            "        ",
+            "    },",
+            "} satisfies Meta<typeof ${TM_FILENAME_BASE/(.*)\\..+$/$1/}>;",
+            "",
+            "export default meta;",
+            "type Story = StoryObj<typeof meta>;",
+            "",
+            "export const Default: Story = {",
+            "    decorators: [ThemeDecorator(Theme.LIGHT)],",
+            "};"
+        ]
+    },
+    "Create test template": {
+        "scope": "typescript, typescriptreact",
+        "prefix": "ts",
+        "body": [
+            "describe(\"${TM_FILENAME_BASE/(.*)\\..+$/$1/}\", () => {",
+            "    test(\"\", () => {",
+            "        expect()",
+            "    });",
+            "});"
+        ]
+    }
+}
