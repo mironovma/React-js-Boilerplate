@@ -13,7 +13,7 @@ export function buildWebpackConfig(
     return {
         mode,
         entry: paths.entry,
-        devtool: isDev ? "inline-source-map" : undefined,
+        devtool: isDev ? "eval-cheap-source-map" : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
         plugins: buildPlugins(options),
         module: {
@@ -21,7 +21,7 @@ export function buildWebpackConfig(
         },
         resolve: buildResolvers(options),
         output: {
-            filename: "[name].[contenthash:4].js",
+            filename: "[name].[contenthash:8].js",
             path: paths.build,
             clean: true,
             publicPath: "/",

@@ -5,11 +5,20 @@ export interface BuildPaths {
     build: string;
     html: string;
     src: string;
+    /**
+     * Путь до папки с переводами
+     */
+    locales: string;
+    /**
+     * Путь до папки билда
+     */
+    buildPath: string;
 }
 
 export interface BuildEnv {
     mode: BuildMode;
     port: number;
+    apiUrl: string;
 }
 
 export interface BuildOptions {
@@ -17,4 +26,5 @@ export interface BuildOptions {
     paths: BuildPaths;
     isDev: boolean;
     port: number;
+    apiUrl: string;
 }
