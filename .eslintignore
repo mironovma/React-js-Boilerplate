@@ -1,3 +1,6 @@
 tailwind.config.js
 babel.config.js
 postcss.config.js
+.fttemplates
+/cypress
+cypress.config.ts

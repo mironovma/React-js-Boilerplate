@@ -25,10 +25,13 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["@typescript-eslint", "react"],
+    plugins: ["@typescript-eslint", "react", "unused-imports"],
     rules: {
         "react/react-in-jsx-scope": "off",
         "react/jsx-uses-react": "off",
+        "react/prop-types": "off",
+        "react/display-name": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-explicit-any": "off",
     },
 };
