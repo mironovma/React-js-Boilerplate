@@ -1,0 +1,12 @@
+# https://github.com/browserslist/browserslist
+# Browsers that we support:
+
+[production]
+defaults
+not IE 11
+not dead
+
+[development]
+last 2 Chrome versions
+last 2 Firefox versions
+last 1 Safari versions
